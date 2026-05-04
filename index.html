@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sherry Emad 2026</title>
+    <title>Sherry Emad | 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;900&display=swap" rel="stylesheet">
     <style>
@@ -23,20 +23,21 @@
 </head>
 <body class="bg-animate min-h-screen">
 
+    <!-- Gate Screen -->
     <div id="gate" class="fixed inset-0 z-[200] bg-white/95 flex items-center justify-center p-8 text-center">
         <div class="max-w-md w-full bg-white p-12 rounded-[3rem] shadow-2xl border-4 border-pink-100">
-            <div class="text-9xl mb-8 animate-bounce">🎂</div>
+            <div class="text-9xl mb-8 animate-bounce">🎁</div>
             <h1 class="text-4xl font-black text-slate-900 mb-4 uppercase tracking-tighter">Sherry's Party</h1>
-            <p class="text-slate-500 mb-10 text-xl font-medium">Ready for the magic?</p>
+            <p class="text-slate-500 mb-10 text-xl font-medium">Click for the surprise!</p>
             <button onclick="startCelebration()" class="w-full bg-gradient-to-r from-pink-500 to-rose-400 text-white font-bold py-6 rounded-full text-2xl shadow-xl transform active:scale-95 transition-all">
-                CLICK TO OPEN ✨
+                OPEN SURPRISE ✨
             </button>
         </div>
     </div>
 
-    <!-- موسيقى عيد الميلاد المباشرة -->
+    <!-- Reliable Music Source -->
     <audio id="hbdMusic" loop preload="auto">
-        <source src="https://www.mboxdrive.com/happy-birthday-to-you-traditional-song.mp3" type="audio/mpeg">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     </audio>
 
     <div id="mainContent" class="opacity-0 transition-opacity duration-1000">
@@ -55,17 +56,17 @@
 
         <section class="max-w-4xl mx-auto px-6 py-24 space-y-32">
             <div class="img-card transform -rotate-2">
-                <img src="FB_IMG_1777838568810.jpg" class="w-full h-auto">
+                <img src="FB_IMG_1777838568810.jpg" class="w-full h-auto" onerror="this.style.display='none'">
                 <div class="p-8 text-center"><p class="text-pink-500 font-bold text-3xl fancy">The Beautiful Princess 👑</p></div>
             </div>
 
             <div class="img-card transform rotate-2">
-                <img src="FB_IMG_1777838587695.jpg" class="w-full h-auto">
-                <div class="p-8 text-center"><p class="text-rose-500 font-bold text-3xl fancy">Amazing Memories ✨</p></div>
+                <img src="FB_IMG_1777838587695.jpg" class="w-full h-auto" onerror="this.style.display='none'">
+                <div class="p-8 text-center"><p class="text-rose-500 font-bold text-3xl fancy">Sweet Moments ✨</p></div>
             </div>
 
             <div class="img-card transform -rotate-1">
-                <img src="FB_IMG_1777838574161.jpg" class="w-full h-auto">
+                <img src="FB_IMG_1777838574161.jpg" class="w-full h-auto" onerror="this.style.display='none'">
                 <div class="p-8 text-center"><p class="text-purple-600 font-bold text-4xl fancy">Shine Bright 💖</p></div>
             </div>
         </section>
@@ -80,9 +81,8 @@
         function startCelebration() {
             const music = document.getElementById('hbdMusic');
             music.play().then(() => {
-                console.log("Playing!");
+                console.log("Audio playing!");
             }).catch(e => {
-                // If it fails, try to reload and play again
                 music.load();
                 music.play();
             });
