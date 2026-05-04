@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sherry Emad | 2026</title>
+    <title>Sherry Emad 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;900&display=swap" rel="stylesheet">
     <style>
@@ -23,26 +23,24 @@
 </head>
 <body class="bg-animate min-h-screen">
 
-    <!-- شاشة البداية -->
     <div id="gate" class="fixed inset-0 z-[200] bg-white/95 flex items-center justify-center p-8 text-center">
         <div class="max-w-md w-full bg-white p-12 rounded-[3rem] shadow-2xl border-4 border-pink-100">
-            <div class="text-9xl mb-8 animate-bounce">🎈</div>
+            <div class="text-9xl mb-8 animate-bounce">🎂</div>
             <h1 class="text-4xl font-black text-slate-900 mb-4 uppercase tracking-tighter">Sherry's Party</h1>
-            <p class="text-slate-500 mb-10 text-xl font-medium">Are you ready for the magic?</p>
+            <p class="text-slate-500 mb-10 text-xl font-medium">Ready for the magic?</p>
             <button onclick="startCelebration()" class="w-full bg-gradient-to-r from-pink-500 to-rose-400 text-white font-bold py-6 rounded-full text-2xl shadow-xl transform active:scale-95 transition-all">
                 CLICK TO OPEN ✨
             </button>
         </div>
     </div>
 
-    <!-- موسيقى هادئة ومبهجة -->
+    <!-- موسيقى عيد الميلاد المباشرة -->
     <audio id="hbdMusic" loop preload="auto">
-        <source src="https://assets.mixkit.co/music/preview/mixkit-happy-day-462.mp3" type="audio/mpeg">
+        <source src="https://www.mboxdrive.com/happy-birthday-to-you-traditional-song.mp3" type="audio/mpeg">
     </audio>
 
     <div id="mainContent" class="opacity-0 transition-opacity duration-1000">
         
-        <!-- الهيدر -->
         <header class="h-screen flex flex-col justify-center items-center text-center px-6">
             <div class="relative mb-10">
                 <div class="absolute -inset-8 bg-white/50 rounded-full blur-2xl animate-pulse"></div>
@@ -55,37 +53,39 @@
             </div>
         </header>
 
-        <!-- الصور -->
         <section class="max-w-4xl mx-auto px-6 py-24 space-y-32">
-            
             <div class="img-card transform -rotate-2">
-                <img src="FB_IMG_1777838568810.jpg" class="w-full h-auto" onerror="this.style.display='none'">
+                <img src="FB_IMG_1777838568810.jpg" class="w-full h-auto">
                 <div class="p-8 text-center"><p class="text-pink-500 font-bold text-3xl fancy">The Beautiful Princess 👑</p></div>
             </div>
 
             <div class="img-card transform rotate-2">
-                <img src="FB_IMG_1777838587695.jpg" class="w-full h-auto" onerror="this.style.display='none'">
+                <img src="FB_IMG_1777838587695.jpg" class="w-full h-auto">
                 <div class="p-8 text-center"><p class="text-rose-500 font-bold text-3xl fancy">Amazing Memories ✨</p></div>
             </div>
 
             <div class="img-card transform -rotate-1">
-                <img src="FB_IMG_1777838574161.jpg" class="w-full h-auto" onerror="this.style.display='none'">
-                <div class="p-8 text-center"><p class="text-purple-600 font-bold text-3xl fancy">Shine Bright 💖</p></div>
+                <img src="FB_IMG_1777838574161.jpg" class="w-full h-auto">
+                <div class="p-8 text-center"><p class="text-purple-600 font-bold text-4xl fancy">Shine Bright 💖</p></div>
             </div>
-
         </section>
 
         <footer class="py-40 text-center">
             <p class="text-5xl text-white font-bold fancy mb-4 animate-pulse">Happy Birthday, Sherry!</p>
-            <p class="text-white/80 font-bold tracking-widest uppercase text-sm">Made for the one and only - 2026</p>
+            <p class="text-white/80 font-bold tracking-widest uppercase text-sm">2026 EDITION</p>
         </footer>
     </div>
 
     <script>
         function startCelebration() {
             const music = document.getElementById('hbdMusic');
-            music.volume = 0.5;
-            music.play().catch(e => console.log("Audio play blocked"));
+            music.play().then(() => {
+                console.log("Playing!");
+            }).catch(e => {
+                // If it fails, try to reload and play again
+                music.load();
+                music.play();
+            });
 
             document.getElementById('gate').style.opacity = '0';
             setTimeout(() => {
@@ -94,7 +94,6 @@
                 main.style.display = 'block';
                 setTimeout(() => main.style.opacity = '1', 50);
                 
-                // البالونات
                 setInterval(() => {
                     const b = document.createElement('div');
                     b.className = 'balloon';
